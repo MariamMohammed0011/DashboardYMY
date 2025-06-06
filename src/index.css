@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Comic+Relief:wght@400;700&family=Dosis:wght@200..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playwrite+RO:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 * {
   margin: 0;
   padding: 0;
@@ -10,16 +9,20 @@
 
 body {
   background-color: #2C2F48;
+  overflow-x: hidden;
+ 
 }
 
 .sidebar {
+  /* border: 1px solid red; */
   width: 18%;
-  height: 100%;
-  min-height: 100vh;
-  
+ 
+  min-height: 100vh; 
+   height:1600px;
   background-color: #3A3D5A;
-  color: white;
-  padding: 10px;
+  color: #fefefe;
+  opacity: 0.7;
+  padding: 20px;
   box-sizing: border-box;
   text-transform: capitalize;
 }
@@ -55,6 +58,7 @@ body {
 .menu li a:hover {
   background-color: #4c5071;
   border-radius: 4px;
+  opacity: 1;
 }
 
 .icon {
@@ -241,3 +245,16 @@ li {
   /* background: #36bc8b; */
 }
 
+
+.MuiBox-root.css-oqlcy8{
+  border :1px solid #fff;
+}
+
+
+
+@media (max-width: 990px) {
+  .sidebar {
+    display: none; 
+    color: #882d2deb;
+  }
+}

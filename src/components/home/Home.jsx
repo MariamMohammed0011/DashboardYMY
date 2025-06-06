@@ -1,11 +1,13 @@
-import React from "react";
-import { Box, Typography, Paper, Grid, Card, CardContent } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Typography, Paper, Grid, Card,Stack, CardContent } from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import { MdFilterFrames } from "react-icons/md";
+import CustomTick from './CustomTick.jsx';
 
 import {
   LineChart,
@@ -47,14 +49,17 @@ const citiesData = [
 ];
 
 export default function Home() {
+ const [activeLabel, setActiveLabel] = useState(null);
+
   return (
     <Box
       sx={{
         flexGrow: 1,
-        p: 3,
+     
         backgroundColor: "#2C2F48",
         minHeight: "100vh",
         color: "white",
+      
       }}
     >
       <Typography variant="body1" gutterBottom style={{ color: "#33ffff" }}>
@@ -72,22 +77,36 @@ export default function Home() {
       >
         Good morning, trend line 😊
       </Typography>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={3}>
+      {/* <Grid container spacing={2}  sx={{}}> */}
+
+<Grid container spacing={2} >
+
+
+
+
+
+
+<Grid container spacing={7}  sx={{width:'100%'}}
+
+
+
+>
+      <Grid item xs={12} sm={6} md={6} lg={3}>
           <Card
             sx={{
               backgroundColor: "#3A3D5A",
               color: "white",
-              width: "200px",
+          
+              width: "115%", // تكيف مع العرض الكامل لعنصر الـ Grid
+              minWidth: { xs: "100%", sm:200 }, // ضمان عرض أدنى
               borderBottom: "3px solid rgba(107, 116, 199, 0.7)",
               transition: "border-bottom 0.2s ease",
-
               "&:hover": {
                 borderBottom: "3.3px solid #6b74c7",
               },
             }}
           >
-            <CardContent>
+           <CardContent sx={{ p: 3 }}> {/* زيادة الـ padding */}
               <Typography
                 variant="body1"
                 component="div"
@@ -99,14 +118,15 @@ export default function Home() {
                   className="icon-home products"
                   style={{ marginRight: "6px" }}
                 >
-                  {" "}
                   <LiaProductHunt />
-                </span>{" "}
+                </span>
                 <span
                   style={{
                     display: "flex",
                     textAlign: "center",
                     margin: "auto 0px",
+                    fontSize:'22px',
+                    fontWeight:'700',
                   }}
                 >
                   7
@@ -121,21 +141,23 @@ export default function Home() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} sm={6} md={6} lg={3}>
           <Card
             sx={{
+           
+             
+                minWidth: { xs: "100%", sm: 200 }, // ضمان عرض أدنى
               backgroundColor: "#3A3D5A",
               color: "white",
-              width: "200px",
+              width: "115%",
               borderBottom: "3px solid rgba(224, 146, 61, 0.3)",
               transition: "border-bottom 0.2s ease",
-
               "&:hover": {
                 borderBottom: "3.3px solid #e0923d",
               },
             }}
           >
-            <CardContent>
+           <CardContent sx={{ p: 3 }}> {/* زيادة الـ padding */}
               <Typography
                 variant="body1"
                 component="div"
@@ -148,12 +170,14 @@ export default function Home() {
                   style={{ marginRight: "6px" }}
                 >
                   <TbShoppingCart />
-                </span>{" "}
+                </span>
                 <span
                   style={{
                     display: "flex",
                     textAlign: "center",
                     margin: "auto 0px",
+                     fontSize:'22px',
+                    fontWeight:'700',
                   }}
                 >
                   303
@@ -168,21 +192,21 @@ export default function Home() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={3}>
+     <Grid item xs={12} sm={6} md={6} lg={3}>
           <Card
             sx={{
+                minWidth: { xs: "100%", sm: 200 }, // ضمان عرض أدنى
               backgroundColor: "#3A3D5A",
               color: "white",
-              width: "200px",
+              width: "115%",
               borderBottom: "3px solid rgba(234, 84, 85, 0.3)",
               transition: "border-bottom 0.2s ease",
-
               "&:hover": {
                 borderBottom: "3.3px solid #ea5455",
               },
             }}
           >
-            <CardContent>
+           <CardContent sx={{ p: 3 }}> {/* زيادة الـ padding */}
               <Typography
                 variant="body1"
                 component="div"
@@ -195,15 +219,17 @@ export default function Home() {
                   style={{ marginRight: "6px" }}
                 >
                   <LiaUserFriendsSolid />
-                </span>{" "}
+                </span>
                 <span
                   style={{
                     display: "flex",
                     textAlign: "center",
                     margin: "auto 0px",
+                     fontSize:'22px',
+                    fontWeight:'700',
                   }}
                 >
-                  25
+                  22
                 </span>
               </Typography>
               <Typography
@@ -215,21 +241,21 @@ export default function Home() {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={3}>
+       <Grid item xs={12} sm={6} md={6} lg={3}>
           <Card
             sx={{
+                minWidth: { xs: "100%", sm: 200 }, // ضمان عرض أدنى
               backgroundColor: "#3A3D5A",
               color: "white",
-              width: "200px",
+              width: "115%",
               borderBottom: "3px solid rgba(26, 183, 234, 0.3)",
               transition: "border-bottom 0.2s ease",
-
               "&:hover": {
                 borderBottom: "3.3px solid #1ab7ea",
               },
             }}
           >
-            <CardContent>
+           <CardContent sx={{ p: 3 }}> {/* زيادة الـ padding */}
               <Typography
                 variant="body1"
                 component="div"
@@ -242,12 +268,14 @@ export default function Home() {
                   style={{ marginRight: "6px" }}
                 >
                   <TiGlobeOutline />
-                </span>{" "}
+                </span>
                 <span
                   style={{
                     display: "flex",
                     textAlign: "center",
                     margin: "auto 0px",
+                     fontSize:'22px',
+                    fontWeight:'700',
                   }}
                 >
                   7
@@ -262,6 +290,18 @@ export default function Home() {
             </CardContent>
           </Card>
         </Grid>
+</Grid>
+  
+
+
+
+
+
+
+
+
+
+
         <Grid item xs={12} md={8} width={"60%"} pt={3}>
           <Paper
             sx={{
@@ -294,16 +334,20 @@ export default function Home() {
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
               >
                 <CartesianGrid stroke="#5D6D7E" strokeDasharray="0" />
+<XAxis
+  dataKey="name"
+  stroke="#ccc"
+  axisLine={false}
+  tickLine={false}
+  tick={(tickProps) => (
+    <CustomTick {...tickProps} activeLabel={activeLabel} />
+  )}
+/>
 
-                <XAxis
-                  dataKey="name"
-                  stroke="#ccc"
-                  axisLine={false}
-                  tickLine={false}
-                />
+
                 <YAxis stroke="#ccc" axisLine={false} tickLine={false} />
-
-                <Tooltip
+ 
+<Tooltip
                   contentStyle={{
                     backgroundColor: "#3A3D5A",
                     color: "white",
@@ -320,7 +364,21 @@ export default function Home() {
                     strokeDasharray: "3 3",
                     opacity: "0.7",
                   }}
-                />
+
+                
+  onMouseMove={(e) => {
+    if (e?.label !== undefined) {
+      setActiveLabel(e.label);
+    }
+  }}
+  
+/>
+
+             
+              
+ 
+                
+                 
                 <Legend />
                 <Area
                   // type="monotone"
@@ -338,12 +396,14 @@ export default function Home() {
                     stroke: "#fff",
                     strokeWidth: 2,
                   }}
+                  
                 />
+              
               </AreaChart>
             </ResponsiveContainer>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={4} width={"35%"} pt={3}>
+        <Grid item xs={12} md={4} width={"38%"} pt={3}>
           <Paper
             sx={{
               fontSize:'3px',

@@ -24,7 +24,7 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Button from "@mui/material/Button";
 import { IoSettings } from "react-icons/io5";
-
+import Staff from "../staff/Staff";
 export default function SideBar() {
   const [menu, setmenue] = useState(false);
 
@@ -38,7 +38,7 @@ export default function SideBar() {
       </h3>
       <ul className="menu">
         <li>
-          <Link style={{}}>
+          <Link to={'/'}>
             <span className="icon">
               <HiOutlineHome />
             </span>{" "}
@@ -46,7 +46,7 @@ export default function SideBar() {
           </Link>
         </li>
         <li>
-          <Link>
+         <Link to="/staff">
             <span className="icon">
               <BsPersonGear />
             </span>
@@ -74,7 +74,7 @@ export default function SideBar() {
               Products
             </AccordionSummary>
 
-            <Link className="">
+            <Link className="" to={"/products"}>
               <span className="icon ">
                 <VscCircle />
               </span>
